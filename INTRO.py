@@ -12,11 +12,11 @@ def play_gif():
     root.lift()
     root.attributes("-topmost",True)
     global img
-    img = Image.open()#enter the gif address
+    img = Image.open("E:\\cat.gif")  # or img = Image.open(r"E:\cat.gif")
     lbl = Label(root)
     lbl.place(x=0,y=0)
     i=0
-    mixer.music.load()#enter the music file address
+    mixer.music.load("C:\\Users\\user\\Downloads\\bol.mp3")  # or mixer.music.load(r"C:\Users\user\Downloads\bol.mp3")
     mixer.music.play()
     
     for img in ImageSequence.Iterator(img):

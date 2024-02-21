@@ -28,8 +28,8 @@ for i in range(3):
         print("Try Again")
 
 
-from INTRO import play_gif
-play_gif
+# from INTRO import play_gif
+# play_gif
 
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty("voices")
