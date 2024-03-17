@@ -74,24 +74,24 @@ if __name__ == "__main__":
             while True:
                 query = takeCommand().lower()
                 if "go to sleep" in query:
-                    speak("Ok sir , You can me call anytime")
+                    speak("Ok boss , You can me call anytime")
                     break
                 elif "hello" in query:
-                    speak("Hello sir, how are you ?")
+                    speak("Hello boss, how are you ?")
                 elif "i am fine" in query:
-                    speak("that's great, sir")
+                    speak("that's great, boss")
                 elif "how are you" in query:
-                    speak("Perfect, sir")
+                    speak("Perfect, boss")
                 elif "thank you" in query:
-                    speak("you are welcome, sir")
+                    speak("you are welcome, boss")
 
-                elif "google" in query:
+                elif "open google" in query:
                     from SearchNow import searchGoogle
                     searchGoogle(query)
-                elif "youtube" in query:
+                elif "open youtube" in query:
                     from SearchNow import searchYoutube
                     searchYoutube(query)
-                elif "wikipedia" in query:
+                elif "open wikipedia" in query:
                     from SearchNow import searchWikipedia
                     searchWikipedia(query)
 
@@ -104,25 +104,25 @@ if __name__ == "__main__":
                     speak(f"current{search} is {temp}")
 
                 elif "weather" in query:
-                    search = "temperature in delhi"
+                    search = "weather in roorkee"
                     url = f"https://www.google.com/search?q={search}"
                     r  = requests.get(url)
                     data = BeautifulSoup(r.text,"html.parser")
                     temp = data.find("div", class_ = "BNeawe").text
                     speak(f"current{search} is {temp}")  
 
-                elif "the time" in query:
+                elif "What is the time Jarvis" in query:
                     strTime = datetime.datetime.now().strftime("%H:%M")    
                     speak(f"Sir, the time is {strTime}")  
 
-                elif "okay jarvis goodnight" in query:
-                    speak("Going to sleep, goodnight maam")
+                elif "ok jarvis good night" in query:
+                    speak("Going to sleep, goodnight boss")
                     exit()    
 
-                elif "open" in query:
+                elif "open dictapp" in query:
                     from Dictapp import openappweb
                     openappweb(query)
-                elif "close" in query:
+                elif "close dictapp" in query:
                     from Dictapp import closeappweb
                     closeappweb(query)  
 
@@ -131,7 +131,7 @@ if __name__ == "__main__":
                     speak("Set the time")
                     a = input("Please tell the time :- ")
                     alarm(a)
-                    speak("Done,sir")  
+                    speak("Done,boss")  
 
                 elif "pause" in query:
                     pyautogui.press("k")
@@ -145,11 +145,11 @@ if __name__ == "__main__":
 
                 elif "volume up" in query:
                     from keyboard import volumeup
-                    speak("Turning volume up,sir")
+                    speak("Turning volume up,boss")
                     volumeup()
                 elif "volume down" in query:
                     from keyboard import volumedown
-                    speak("Turning volume down, sir")
+                    speak("Turning volume down, boss")
                     volumedown()                
 
                 elif "remember that" in query:
@@ -164,7 +164,7 @@ if __name__ == "__main__":
                     speak("You told me to remember that" + remember.read())
 
                 elif "tired" in query:
-                    speak("Playing your favourite songs, sir")
+                    speak("Playing your favourite songs, boss")
                     a = (1,2,3) # You can choose any number of songs (I have only choosen 3)
                     b = random.choice(a)
                     if b==1:
@@ -201,7 +201,7 @@ if __name__ == "__main__":
                     new_password = open("password.txt","w")
                     new_password.write(new_pw)
                     new_password.close()
-                    speak("Done sir")
+                    speak("Done boss")
                     speak(f"Your new password is{new_pw}")
 
                 elif "schedule my day" in query:
